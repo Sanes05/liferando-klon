@@ -36,18 +36,21 @@ let myDishes = [
 		},
 	],
 	[
-		//Beilagen
+		//Hot Dogs
 		{
-			name: "Pommes Frites",
+			name: "Classic Danish Hot Dog",
+			price: 4.95,
+			description: "mit Senf, Gurken, Haus-Dressing und Röstzwiebeln",
+		},
+		{
+			name: "New York Hot Dog",
 			price: 5.45,
+			description: "mit Sauerkraut, Haus-Dressing und Röstzwiebeln",
 		},
 		{
-			name: "Süßkartoffel Pommes",
-			price: 6.45,
-		},
-		{
-			name: "Onion Rings",
-			price: 7.45,
+			name: "Mexican Hot Dog (scharf)",
+			price: 5.95,
+			description: "mit hausgemachter, scharfer Sauce, Jalapenos und Röstzwiebeln",
 		},
 	],
 ];
