@@ -89,10 +89,30 @@ header {
 }
 
 .dishes-headline-div {
-	background-color: var(--background-color);
 	margin-left: -16px;
 }
 
 .dishes-headline {
+	margin-block-start: 0;
+	margin-block-end: 0;
 	margin-left: 16px;
+}
+
+.img-style {
+	background-position: center;
+	height: 150px;
+	margin-top: 32px;
+	margin-right: 16px;
+}
+
+.dishes-burger-img-div {
+	background-image: url(../assets/img/burger1.png);
+}
+
+.dishes-burger-menu-img-div {
+	background-image: url(../assets/img/burger2.png);
+}
+
+.dishes-hot-dog-img-div {
+	background-image: url(../assets/img/hotdog.png);
 }
