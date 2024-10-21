@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -94,7 +98,6 @@ header {
 
 .dishes-headline {
 	margin-block-start: 0;
-	margin-block-end: 0;
 	margin-left: 16px;
 }
 
@@ -103,6 +106,7 @@ header {
 	height: 150px;
 	margin-top: 32px;
 	margin-right: 16px;
+	border-radius: 16px;
 }
 
 .dishes-burger-img-div {

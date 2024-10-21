@@ -8,10 +8,12 @@ const basketTemplate = () => {
 
 const dishTemplate = (name, price, description) => {
 	return `
-        <div class="dish">
-            <h3>${name}</h3>
-            <p>${description}</p>
-            <p>${price}€</p>
-        </div>
+    <div class="dish">
+	    <div class="inner-dish">
+		    <h3>${name}</h3>
+		    <p>${description}</p>
+		    <p>${price}€</p>
+	    </div>
+    </div>
     `;
 };

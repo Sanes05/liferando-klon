@@ -3,3 +3,20 @@
 	display: flex;
 	justify-content: center;
 }
+
+.dish {
+	border: 1px solid var(--background-color);
+	margin-right: 16px;
+	margin-bottom: 16px;
+	border-radius: 16px;
+}
+
+.dish:hover {
+	cursor: pointer;
+	border: 1px solid gray;
+	background-color: var(--background-color);
+}
+
+.inner-dish {
+	margin-left: 16px;
+}
