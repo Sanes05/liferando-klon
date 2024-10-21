@@ -2,6 +2,7 @@ body {
 	padding: 0;
 	margin: 0;
 	--main-color: #ff7f00;
+	--background-color: rgba(0, 0, 0, 0.1);
 	font-family: "Roboto";
 }
 
@@ -56,6 +57,27 @@ header {
 	color: var(--main-color);
 }
 
+.nav-btn-row {
+	background-color: var(--background-color);
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.nav-btn {
+	color: black;
+	text-decoration: none;
+	margin-left: 16px;
+}
+
+.nav-btn:hover {
+	color: black;
+	text-decoration: underline;
+}
+
 .basket-section {
 	flex-grow: 1;
+	box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	height: 80vh;
+	position: sticky;
+	top: 0;
 }

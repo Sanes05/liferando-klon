@@ -1,8 +1,8 @@
 function onload() {
-	loadBasket();
+	renderBasket();
 }
 
-function loadBasket() {
+function renderBasket() {
 	let basket = document.getElementById("basket");
 	basket.innerHTML = basketTemplate();
 }
