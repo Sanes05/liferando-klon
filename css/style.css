@@ -32,6 +32,14 @@ header {
 	height: 30vh;
 }
 
+.resturants-text-div {
+	margin-left: 16px;
+}
+
+.ratings {
+	color: var(--main-color);
+}
+
 .basket-section {
 	width: 20%;
 }
