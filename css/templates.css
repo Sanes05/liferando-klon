@@ -9,6 +9,8 @@
 	margin-right: 16px;
 	margin-bottom: 16px;
 	border-radius: 16px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .dish:hover {
@@ -19,4 +21,17 @@
 
 .inner-dish {
 	margin-left: 16px;
+}
+
+.add-btn {
+	border: 1px solid var(--background-color);
+	border-radius: 8px;
+	margin-top: 8px;
+	margin-right: 8px;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+.add-btn:hover {
+	border: 1px solid gray;
 }
