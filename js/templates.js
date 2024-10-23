@@ -1,4 +1,4 @@
-const basketTemplate = (name, price, ammount) => {
+const basketTemplate = (name, price) => {
 	return `
 <div class="basket-main-div" id="basket-items">
 	<div class="basket-item-div">
@@ -6,11 +6,11 @@ const basketTemplate = (name, price, ammount) => {
 		<p class="basket-item-price orange">${price}€</p>
 	</div>
 	<div class="ammount-btn-div">
-		<button onclick="removeAmmount()"><img src="./assets/icon/remove.svg" alt="" /></button>
-		<button onclick="addAmmount()"><img src="./assets/icon/plus.svg" alt="" /></button>
+		<button onclick="editAmmount('remove')"><img src="./assets/icon/remove.svg" alt="" /></button>
+		<button onclick="editAmmount('add')"><img src="./assets/icon/plus.svg" alt="" /></button>
 	</div>
 	<div class="basket-amout-div">
-		<p class="basket-item-ammount">${ammount}</p>
+		<p class="basket-item-ammount" id="ammount-id"></p>
 	</div>
 </div>
 

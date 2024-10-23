@@ -28,21 +28,29 @@ function addToBasket() {}
 
 let ammount = 0;
 
-const addAmmount = () => {
-	ammount++;
-	console.log(ammount);
-};
-
-const removeAmmount = () => {
-	ammount--;
-	console.log(ammount);
-};
+function editAmmount(id) {
+	let ammountRef = document.getElementById("ammount-id");
+	if (id === "add") {
+		ammount++;
+		ammountRef.innerHTML = ammount;
+	} else if (id === "remove") {
+		if (ammount < 1) {
+			console.error("Wert ist kleiner als 1");
+			removeFromBasket();
+			return false;
+		}
+		ammount--;
+		ammountRef.innerHTML = ammount;
+	}
+}
 
 function renderBasket() {
 	let basketRef = document.getElementById("basket");
 	for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
 		const basketItems = basket[basketIndex];
 		const price = basketItems.price.toString().replace(".", ",");
-		basketRef.innerHTML += basketTemplate(basketItems.name, price, ammount);
+		basketRef.innerHTML += basketTemplate(basketItems.name, price);
 	}
 }
+
+function removeFromBasket() {}
