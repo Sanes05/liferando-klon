@@ -44,6 +44,14 @@ function editAmmount(id) {
 	}
 }
 
+function removeFromBasket() {}
+
+function calculateFullPrice() {
+	let fullPriceRef = document.getElementById("ammount-id");
+	let fullPrice = price * ammount;
+	fullPriceRef.innerHTML = fullPrice;
+}
+
 function renderBasket() {
 	let basketRef = document.getElementById("basket");
 	for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
@@ -52,5 +60,3 @@ function renderBasket() {
 		basketRef.innerHTML += basketTemplate(basketItems.name, price);
 	}
 }
-
-function removeFromBasket() {}
