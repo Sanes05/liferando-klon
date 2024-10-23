@@ -35,3 +35,15 @@
 .add-btn:hover {
 	border: 1px solid gray;
 }
+
+.orange {
+	color: var(--main-color);
+}
+
+.basket-main-div {
+	border: 1px solid var(--background-color);
+	border-radius: 16px;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-bottom: 8px;
+}
