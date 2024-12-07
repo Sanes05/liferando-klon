@@ -13,11 +13,11 @@
 	justify-content: space-between;
 }
 
-.dish:hover {
+/* .dish:hover {
 	cursor: pointer;
 	border: 1px solid gray;
 	background-color: var(--background-color);
-}
+} */
 
 .inner-dish {
 	margin-left: 16px;

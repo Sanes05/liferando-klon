@@ -3,16 +3,8 @@ function onload() {
 	renderDishes();
 }
 
-let basket = [
-	{
-		name: "Classic Cheese Burger",
-		price: 9.65,
-	},
-	{
-		name: "Hamburger",
-		price: 8.65,
-	},
-];
+let basket = [];
+let ammount = 0;
 
 function renderDishes() {
 	let dishes = [document.getElementById("burger"), document.getElementById("burger-menu"), document.getElementById("hot-dog")];
@@ -24,39 +16,55 @@ function renderDishes() {
 	});
 }
 
-function addToBasket() {}
-
-let ammount = 0;
-
-function editAmmount(id) {
-	let ammountRef = document.getElementById("ammount-id");
-	if (id === "add") {
-		ammount++;
-		ammountRef.innerHTML = ammount;
-	} else if (id === "remove") {
-		if (ammount < 1) {
-			console.error("Wert ist kleiner als 1");
-			removeFromBasket();
-			return false;
-		}
-		ammount--;
-		ammountRef.innerHTML = ammount;
+function addToBasket(dish) {
+	const existingDish = basket.find((item) => item.name === dish.name);
+	if (existingDish) {
+		existingDish.ammount++;
+	} else {
+		basket.push({...dish, ammount: 1});
 	}
+	renderBasket();
+	calculateFullPrice();
 }
 
-function removeFromBasket() {}
+function editAmmount(id, basketIndex) {
+	let ammountRef = document.getElementById(`ammount-id${basketIndex}`);
+	let item = basket[basketIndex];
+	if (id === "add") {
+		item.ammount++;
+	} else if (id === "remove") {
+		if (item.ammount <= 1) {
+			removeFromBasket(basketIndex);
+			return;
+		}
+		item.ammount--;
+	}
+	ammountRef.innerHTML = item.ammount;
+	calculateFullPrice();
+	renderBasket();
+}
+
+function removeFromBasket(basketIndex) {
+	basket.splice(basketIndex, 1);
+	renderBasket();
+	calculateFullPrice();
+}
 
 function calculateFullPrice() {
-	let fullPriceRef = document.getElementById("ammount-id");
-	let fullPrice = price * ammount;
-	fullPriceRef.innerHTML = fullPrice;
+	let fullPrice = 0;
+	basket.forEach((item) => {
+		fullPrice += item.price * item.ammount;
+	});
+	document.getElementById("full-price").innerHTML = fullPrice.toFixed(2).replace(".", ",") + "€";
 }
 
 function renderBasket() {
 	let basketRef = document.getElementById("basket");
+	basketRef.innerHTML = "";
 	for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
 		const basketItems = basket[basketIndex];
 		const price = basketItems.price.toString().replace(".", ",");
-		basketRef.innerHTML += basketTemplate(basketItems.name, price);
+		basketRef.innerHTML += basketTemplate(basketItems.name, price, basketIndex);
+		document.getElementById(`ammount-id${basketIndex}`).innerHTML = basketItems.ammount;
 	}
 }
