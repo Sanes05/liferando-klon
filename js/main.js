@@ -1,6 +1,7 @@
 function onload() {
 	renderBasket();
 	renderDishes();
+	calculateFullPrice();
 }
 
 let basket = [];
@@ -51,10 +52,14 @@ function removeFromBasket(basketIndex) {
 }
 
 function calculateFullPrice() {
-	let fullPrice = 0;
+	let price = 0;
+	let deleveryCosts = 3.5;
 	basket.forEach((item) => {
-		fullPrice += item.price * item.ammount;
+		price += item.price * item.ammount;
 	});
+	let fullPrice = price + deleveryCosts;
+	document.getElementById("deliveryCosts").innerHTML = deleveryCosts.toFixed(2).replace(".", ",") + "€";
+	document.getElementById("price").innerHTML = price.toFixed(2).replace(".", ",");
 	document.getElementById("full-price").innerHTML = fullPrice.toFixed(2).replace(".", ",") + "€";
 }
 
