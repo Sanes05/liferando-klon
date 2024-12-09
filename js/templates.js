@@ -22,7 +22,7 @@ const basketTemplate = (name, price, basketIndex) => {
 
 const dishTemplate = (name, price, description) => {
 	return `
-    <div class="dish" onclick="addToBasket({ name: '${name}', price: ${price.replace(",", ".")}})">
+    <div class="dish"">
 	<div class="inner-dish">
 		<h3>${name}</h3>
 		<p>${description}</p>
