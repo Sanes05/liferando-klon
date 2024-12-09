@@ -44,21 +44,21 @@
 /* Responsive */
 @media (max-width: 800px) {
 	.overlay-content {
-		width: 500px;
-		height: 700px;
+		width: 100dvw;
+		height: 100dvh;
 	}
 }
 
 @media (max-width: 600px) {
 	.overlay-content {
-		width: 400px;
-		height: 600px;
+		width: 100dvw;
+		height: 100dvh;
 	}
 }
 
 @media (max-width: 400px) {
 	.overlay-content {
-		width: 320px;
-		height: 750px;
+		width: 100dvw;
+		height: 100dvh;
 	}
 }
