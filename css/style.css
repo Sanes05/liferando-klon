@@ -93,6 +93,27 @@ footer {
 	top: 0;
 }
 
+.order-btn-div {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16px;
+}
+
+.order-btn-main {
+	width: 80%;
+	margin-left: 16px;
+	margin-right: 16px;
+	background-color: var(--main-color);
+	font-size: 24px;
+	border-radius: 16px;
+	border: 0px;
+	cursor: pointer;
+}
+
+.order-btn-main:hover {
+	background-color: #ff9328;
+}
+
 /* Dishes */
 
 .dishes-main-div {

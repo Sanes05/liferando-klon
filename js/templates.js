@@ -37,13 +37,21 @@ const dishTemplate = (name, price, description) => {
     `;
 };
 
-function resBasketTemplate() {
+const resBasketTemplate = () => {
 	return `
 	<div class="overlay-background" onclick="closeBasket()"></div>
 			<div class="overlay-content" id="overlay-content">
 			<h1>Warenkorb</h1>
 			<div id="resBasket"></div>
-							<div class="prices">
+			${priceTemplate()}
+			<button class="order-btn-main" onclick="orderFun()">Bestellen</button>
+			</div>
+				`;
+};
+
+const priceTemplate = () => {
+	return `		
+		<div class="prices">
 					<div class="prices-main">
 						<p class="price">Zwichenkosten:</p>
 						<div id="price"></div>
@@ -56,7 +64,5 @@ function resBasketTemplate() {
 						<p class="full-price">Gesamt:</p>
 						<div id="full-price"></div>
 					</div>
-				</div>
-		</div>
-				`;
-}
+		</div>`;
+};

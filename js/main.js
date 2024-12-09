@@ -2,6 +2,7 @@ function onload() {
 	renderBasket();
 	renderDishes();
 	calculateFullPrice();
+	enableScroll();
 }
 
 let basket = [];
@@ -41,18 +42,21 @@ function editAmmount(id, basketIndex) {
 		item.ammount--;
 	}
 	ammountRef.innerHTML = item.ammount;
+	checkWidth();
 	calculateFullPrice();
+}
+
+const checkWidth = () => {
 	if (window.innerWidth < 1050) {
 		renderResBasket();
 	} else {
 		renderBasket();
 	}
-}
+};
 
 function removeFromBasket(basketIndex) {
 	basket.splice(basketIndex, 1);
-	renderBasket();
-	renderResBasket();
+	checkWidth();
 	calculateFullPrice();
 }
 
@@ -92,7 +96,11 @@ function openBasket() {
 }
 
 function closeBasket() {
-	openBasket();
+	let overlay = document.getElementById("overlay");
+	let priceRef = document.getElementById("prices");
+	overlay.classList.toggle("overlay");
+	priceRef.innerHTML = priceTemplate();
+	onload();
 }
 
 function renderResBasket() {
@@ -106,4 +114,11 @@ function renderResBasket() {
 	}
 }
 
-window.addEventListener("resize", onload());
+const orderFun = () => {
+	if (basket.length === 0) {
+		alert("Dein Warenkorb ist leer");
+	} else {
+		alert("Deine Bestellung wurde Abgeschlossen");
+		location.reload();
+	}
+};
