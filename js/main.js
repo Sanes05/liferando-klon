@@ -2,7 +2,6 @@ function onload() {
 	renderBasket();
 	renderDishes();
 	calculateFullPrice();
-	enableScroll();
 }
 
 let basket = [];
