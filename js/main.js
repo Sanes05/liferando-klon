@@ -99,7 +99,6 @@ function closeBasket() {
 	let priceRef = document.getElementById("prices");
 	overlay.classList.toggle("overlay");
 	priceRef.innerHTML = priceTemplate();
-	onload();
 }
 
 function renderResBasket() {
