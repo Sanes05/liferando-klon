@@ -41,7 +41,8 @@ const resBasketTemplate = () => {
 	return `
 	<div class="overlay-background" onclick="closeBasket()"></div>
 			<div class="overlay-content" id="overlay-content">
-			<h1>Warenkorb</h1>
+			<h1 class="headline-basket">Warenkorb</h1>
+			<button class="order-btn-main" onclick="closeBasket()">Warenkorb Schließen</button>
 			<div id="resBasket"></div>
 			${priceTemplate()}
 			<button class="order-btn-main" onclick="orderFun()">Bestellen</button>

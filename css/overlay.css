@@ -30,8 +30,8 @@
 .overlay-content {
 	position: fixed;
 	background-color: white;
-	width: 600px;
-	height: 800px;
+	width: 100dvw;
+	height: 100dvh;
 	border-radius: 16px;
 	display: flex;
 	flex-direction: column;
