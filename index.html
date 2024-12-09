@@ -6,11 +6,11 @@
 		<link rel="shortcut icon" href="./assets/icon/favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="./css/fonts.css" />
 		<link rel="stylesheet" href="./css/templates.css" />
+		<link rel="stylesheet" href="./css/overlay.css" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Bestell App</title>
 		<script src="./js/DB.js"></script>
 		<script src="./js/templates.js"></script>
-		<script src="./js/main.js"></script>
 	</head>
 	<body onload="onload()">
 		<header>
@@ -26,6 +26,9 @@
 						<h1 class="resturant-headline">Burger City</h1>
 						<p class="ratings">Bewertung (4,2 von 5 sterne)</p>
 					</div>
+				</div>
+				<div class="basket-btn-div">
+					<button class="open-basket-btn" onclick="openBasket()">Warenkorb öffnen</button>
 				</div>
 				<nav>
 					<div class="nav-btn-row">
@@ -60,7 +63,7 @@
 					<h2 class="basket-headline">Warenkorb</h2>
 				</div>
 				<div id="basket" class="basket-div"></div>
-				<div class="prices">
+				<div class="prices" id="prices">
 					<div class="prices-main">
 						<p class="price">Zwichenkosten:</p>
 						<div id="price"></div>
@@ -75,6 +78,9 @@
 					</div>
 				</div>
 			</section>
+			<div id="overlay" class="d-none"></div>
 		</div>
+		<footer>Made By Kevin</footer>
+		<script src="./js/main.js"></script>
 	</body>
 </html>

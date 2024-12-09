@@ -22,17 +22,41 @@ const basketTemplate = (name, price, basketIndex) => {
 
 const dishTemplate = (name, price, description) => {
 	return `
-    <div class="dish">
+    <div class="dish" onclick="addToBasket({ name: '${name}', price: ${price.replace(",", ".")}})">
 	<div class="inner-dish">
 		<h3>${name}</h3>
 		<p>${description}</p>
 		<p class="orange">${price}€</p>
 	</div>
 	<div class="add-btn-div">
-		<button class="add-btn" onclick="addToBasket({ name: '${name}', price: ${price.replace(",", ".")}, description: '${description}' })">
+		<button class="add-btn" onclick="addToBasket({ name: '${name}', price: ${price.replace(",", ".")} })">
 			<img class="btn-img" src="./assets/icon/plus.svg" alt="plus" />
 		</button>
 	</div>
 </div>
     `;
 };
+
+function resBasketTemplate() {
+	return `
+	<div class="overlay-background" onclick="closeBasket()"></div>
+			<div class="overlay-content" id="overlay-content">
+			<h1>Warenkorb</h1>
+			<div id="resBasket"></div>
+							<div class="prices">
+					<div class="prices-main">
+						<p class="price">Zwichenkosten:</p>
+						<div id="price"></div>
+					</div>
+					<div class="prices-main">
+						<p class="deliverycosts">Lieferkosten:</p>
+						<div id="deliveryCosts"></div>
+					</div>
+					<div class="prices-main">
+						<p class="full-price">Gesamt:</p>
+						<div id="full-price"></div>
+					</div>
+				</div>
+		</div>
+				`;
+}

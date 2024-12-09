@@ -13,6 +13,11 @@
 	justify-content: space-between;
 }
 
+.dish:hover {
+	border: 1px solid black;
+	transition: 0.5s;
+}
+
 .inner-dish {
 	margin-left: 16px;
 }

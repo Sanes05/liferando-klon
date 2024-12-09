@@ -42,12 +42,17 @@ function editAmmount(id, basketIndex) {
 	}
 	ammountRef.innerHTML = item.ammount;
 	calculateFullPrice();
-	renderBasket();
+	if (window.innerWidth < 1050) {
+		renderResBasket();
+	} else {
+		renderBasket();
+	}
 }
 
 function removeFromBasket(basketIndex) {
 	basket.splice(basketIndex, 1);
 	renderBasket();
+	renderResBasket();
 	calculateFullPrice();
 }
 
@@ -73,3 +78,32 @@ function renderBasket() {
 		document.getElementById(`ammount-id${basketIndex}`).innerHTML = basketItems.ammount;
 	}
 }
+
+function openBasket() {
+	let overlay = document.getElementById("overlay");
+	let basket = document.getElementById("basket");
+	let priceRef = document.getElementById("prices");
+	basket.innerHTML = "";
+	priceRef.innerHTML = "";
+	overlay.innerHTML = resBasketTemplate();
+	renderResBasket();
+	calculateFullPrice();
+	overlay.classList.toggle("overlay");
+}
+
+function closeBasket() {
+	openBasket();
+}
+
+function renderResBasket() {
+	let basketRef = document.getElementById("resBasket");
+	basketRef.innerHTML = "";
+	for (let basketIndex = 0; basketIndex < basket.length; basketIndex++) {
+		const basketItems = basket[basketIndex];
+		const price = basketItems.price.toString().replace(".", ",");
+		basketRef.innerHTML += basketTemplate(basketItems.name, price, basketIndex);
+		document.getElementById(`ammount-id${basketIndex}`).innerHTML = basketItems.ammount;
+	}
+}
+
+window.addEventListener("resize", onload());
