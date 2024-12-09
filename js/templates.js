@@ -5,16 +5,16 @@ const basketTemplate = (name, price, basketIndex) => {
 		<p class="basket-item-name">${name}</p>
 		<p class="basket-item-price orange">${price}€</p>
 	</div>
-	<div class="ammount-btn-div">
-		<button onclick="editAmmount('remove', ${basketIndex})">
+	<div class="ammount-div">
+		<button class="ammount-btn" onclick="editAmmount('remove', ${basketIndex})">
 			<img src="./assets/icon/remove.svg" alt="remove" />
 		</button>
-		<button onclick="editAmmount('add', ${basketIndex})">
+			<div class="basket-amout-div">
+		<p class="basket-item-ammount" id="ammount-id${basketIndex}"></p>
+			</div>
+		<button class="ammount-btn" onclick="editAmmount('add', ${basketIndex})">
 			<img src="./assets/icon/plus.svg" alt="add" />
 		</button>
-	</div>
-	<div class="basket-amout-div">
-		<p class="basket-item-ammount" id="ammount-id${basketIndex}"></p>
 	</div>
 </div>
     `;

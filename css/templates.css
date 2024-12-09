@@ -13,12 +13,6 @@
 	justify-content: space-between;
 }
 
-/* .dish:hover {
-	cursor: pointer;
-	border: 1px solid gray;
-	background-color: var(--background-color);
-} */
-
 .inner-dish {
 	margin-left: 16px;
 }
@@ -46,4 +40,26 @@
 	margin-left: 4px;
 	margin-right: 4px;
 	margin-bottom: 8px;
+}
+
+.basket-main-div {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.ammount-btn {
+	background-color: inherit;
+	border: 1px solid var(--background-color);
+	border-radius: 8px;
+}
+
+.ammount-btn:hover {
+	border: 1px solid black;
+	transition-duration: 0.5s;
+}
+
+.ammount-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }

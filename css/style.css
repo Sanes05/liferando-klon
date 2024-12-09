@@ -81,7 +81,7 @@ header {
 .basket-section {
 	flex-grow: 1;
 	box-shadow: -10px 0px 10px 0px rgba(0, 0, 0, 0.1);
-	height: 80vh;
+	height: 100%;
 	position: sticky;
 	top: 0;
 }
@@ -120,3 +120,19 @@ header {
 .dishes-hot-dog-img-div {
 	background-image: url(../assets/img/hotdog.png);
 }
+
+.prices-main {
+	margin-top: -16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+}
+
+.prices {
+	margin-top: 8px;
+}
+
+/* RESPONSIVE */
